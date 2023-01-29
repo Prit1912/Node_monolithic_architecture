@@ -1,0 +1,48 @@
+{
+  "name": "node-architecture",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "set NODE_ENV=development&& node app.js",
+    "stage": "set NODE_ENV=staging&& node app.js",
+    "prod": "set NODE_ENV=production&& node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint:fix": "eslint --fix ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.1277.0",
+    "axios": "^0.27.2",
+    "body-parser": "^1.20.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-fileupload": "^1.4.0",
+    "lodash": "^4.17.21",
+    "mongoose": "^6.9.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.32.0",
+    "husky": "^8.0.3",
+    "prettier": "^2.8.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,vue,html,md}": [
+      "eslint --fix",
+      "prettier --write",
+      "git add"
+    ],
+    "*.{json}": [
+      "prettier --write",
+      "git add"
+    ]
+  }
+}
