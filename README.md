@@ -1,4 +1,4 @@
-# Node API Monolithic Architechure
+# Node API Monolithic Architecture
 
 - This is the initial setup of node api to start your project
 - There is multiple environment setup also
