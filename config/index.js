@@ -1,12 +1,14 @@
 const dotenv = require("dotenv");
 const path = require("path");
 
+const NODE_ENV = (process.env.NODE_ENV || "development").trim();
+
 dotenv.config({
-  path: path.resolve(__dirname, "environments", `${process.env.NODE_ENV}.env`),
+  path: path.resolve(__dirname, "environments", `${NODE_ENV}.env`),
 });
 
 module.exports = {
-  NODE_ENV: process.env.NODE_ENV || "development",
+  NODE_ENV,
   HOST: process.env.HOST || "localhost",
   PORT: process.env.PORT || 3000,
   DB_URI:

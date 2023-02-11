@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "set NODE_ENV=development&& node app.js",
-    "stage": "set NODE_ENV=staging&& node app.js",
-    "prod": "set NODE_ENV=production&& node app.js",
+    "prestart": "npx rimraf dist && babel . --ignore node_modules,dist,.git,.vscode --out-dir dist --copy-files",
+    "start": "set NODE_ENV=production && node dist/app.js",
+    "dev": "set NODE_ENV=development && nodemon --exec babel-node app.js",
+    "stage": "npm run prestart && set NODE_ENV=staging && node dist/app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint:fix": "eslint --fix ."
   },
@@ -25,8 +26,13 @@
     "mongoose": "^6.9.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.20.7",
+    "@babel/core": "^7.20.12",
+    "@babel/node": "^7.20.7",
+    "@babel/preset-env": "^7.20.2",
     "eslint": "^8.32.0",
     "husky": "^8.0.3",
+    "nodemon": "^2.0.20",
     "prettier": "^2.8.3"
   },
   "husky": {
