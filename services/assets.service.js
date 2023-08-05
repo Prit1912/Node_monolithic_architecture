@@ -21,6 +21,7 @@ module.exports = {
       return uploadUrls;
     } catch (error) {
       console.log(error);
+      throw error
     }
   },
   async deleteFiles(filePaths) {
@@ -31,6 +32,7 @@ module.exports = {
       }
     } catch (error) {
       console.log(error);
+      throw error
     }
   },
   async fetchFile(filePath) {
@@ -39,6 +41,7 @@ module.exports = {
       return data;
     } catch (error) {
       console.log(error);
+      throw error
     }
   },
 };

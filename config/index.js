@@ -20,4 +20,6 @@ module.exports = {
   AWS_APP_USER_ACCESS_KEY: process.env.AWS_APP_USER_ACCESS_KEY || "",
   AWS_APP_USER_SECRET_ACCESS_KEY:
     process.env.AWS_APP_USER_SECRET_ACCESS_KEY || "",
+  ALGORITHM: process.env.ALGORITHM || "",
+  SECRET_KEY: process.env.SECRET_KEY || "",
 };

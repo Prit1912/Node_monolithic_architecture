@@ -19,3 +19,8 @@ module.exports = async () => {
     console.log("Error connecting database");
   }
 };
+
+/* if it gives error connection refuse error in local follow these steps
+Go to Control Panel and click on Administrative Tools.
+Double click on Services. A new window opens up.
+Search MongoDB.exe. Right click on it and select Start. */

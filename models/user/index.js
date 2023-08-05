@@ -25,6 +25,7 @@ const userSchema = new Schema(
     firstName: String,
     middleName: String,
     lastName: String,
+    userName: String,
     gender: {
       type: String,
       enums: [...GENDERS, BLANK],
